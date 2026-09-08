@@ -180,4 +180,68 @@ transactional outbox, idempotent consumers, and REST-vs-Kafka selection rules.
 Review comments are resolved or tracked as follow-up work.
 ```
 
+# PLAT-001-T04 Deliverable Package
+
+This package contains the complete deliverables for:
+
+**PLAT-001-T04 — Create high-level deployment architecture**
+
+## Files
+
+```text
+docs/architecture/
+├── high-level-deployment-architecture.md
+├── environment-topology.md
+├── high-level-deployment-diagram.md
+└── plat-001-t04-review-checklist.md
+```
+
+## What This Task Establishes
+
+PLAT-001-T01 defined service/domain ownership.
+
+PLAT-001-T02 defined database/schema ownership.
+
+PLAT-001-T03 defined REST and Kafka communication.
+
+PLAT-001-T04 defines where those components run and how they are separated at runtime.
+
+## Recommended Jira Acceptance Criteria
+
+1. Every microservice has an independent deployment boundary.
+2. The API gateway is the external business-service entry point.
+3. Internal services are not directly internet-exposed.
+4. Kubernetes is documented as the target production-style runtime.
+5. Oracle service-owned schema boundaries are represented.
+6. Kafka is represented as the asynchronous event backbone.
+7. OIDC/OAuth2 identity integration is represented.
+8. Observability includes metrics, logs, and distributed tracing.
+9. External providers are isolated behind their owning services.
+10. DEV, TEST, STAGING, and PROD separation is documented.
+11. CI -> registry -> deployment flow is documented.
+12. Local development preserves independent service repositories.
+13. A source-controlled high-level deployment diagram is produced.
+14. Architecture is reviewed for consistency with PLAT-001-T01, T02, and T03.
+
+## Suggested Jira Completion Comment
+
+Use only after actual review:
+
+```text
+Completed PLAT-001-T04.
+
+Deliverables:
+- high-level-deployment-architecture.md
+- environment-topology.md
+- high-level-deployment-diagram.md
+- plat-001-t04-review-checklist.md
+
+The deployment baseline now defines independent Kubernetes workloads, gateway
+entry, service-owned Oracle schemas, Kafka messaging, identity, observability,
+external-provider boundaries, environment separation, and CI/CD deployment flow.
+
+Review comments are resolved or tracked as follow-up work.
+```
+
+
 
