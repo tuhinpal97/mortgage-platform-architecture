@@ -7,39 +7,39 @@
 
 ## Domain Boundary Review
 
-- [ ] Every planned business service has a defined purpose.
-- [ ] Each bounded context is understandable without implementation code.
-- [ ] Ambiguous responsibilities are explicitly excluded.
-- [ ] Product, policy, pricing, underwriting, closing, funding, servicing, and payment responsibilities are clearly separated.
+- [x] Every planned business service has a defined purpose.
+- [x] Each bounded context is understandable without implementation code.
+- [x] Ambiguous responsibilities are explicitly excluded.
+- [x] Product, policy, pricing, underwriting, closing, funding, servicing, and payment responsibilities are clearly separated.
 
 ## Data Ownership Review
 
-- [ ] Every major business fact has one authoritative owner.
-- [ ] Each service's Oracle schema boundary is clear.
-- [ ] Cross-service foreign keys are prohibited.
-- [ ] Direct cross-service SQL access is prohibited.
-- [ ] External-reference rules are documented.
+- [x] Every major business fact has one authoritative owner.
+- [x] Each service's Oracle schema boundary is clear.
+- [x] Cross-service foreign keys are prohibited.
+- [x] Direct cross-service SQL access is prohibited.
+- [x] External-reference rules are documented.
 
 ## Integration Review
 
-- [ ] Synchronous vs asynchronous interaction principles are stated.
-- [ ] REST and Kafka are the planned business integration mechanisms.
-- [ ] Event publication responsibility is tied to the service that owns the state change.
-- [ ] Local snapshots/projections are distinguished from authoritative data.
+- [x] Synchronous vs asynchronous interaction principles are stated.
+- [x] REST and Kafka are the planned business integration mechanisms.
+- [x] Event publication responsibility is tied to the service that owns the state change.
+- [x] Local snapshots/projections are distinguished from authoritative data.
 
 ## Independent Deployability Review
 
-- [ ] Each business service can evolve without sharing domain source code.
-- [ ] Shared business JARs are prohibited.
-- [ ] Each service owns its database migrations.
-- [ ] The architecture avoids distributed ACID transactions across services.
+- [x] Each business service can evolve without sharing domain source code.
+- [x] Shared business JARs are prohibited.
+- [x] Each service owns its database migrations.
+- [x] The architecture avoids distributed ACID transactions across services.
 
 ## Security / Compliance Review
 
-- [ ] Customer PII ownership is explicit.
-- [ ] PII minimization rules are present.
-- [ ] Document access ownership is explicit.
-- [ ] Audit and operational logging responsibilities are separated.
+- [x] Customer PII ownership is explicit.
+- [x] PII minimization rules are present.
+- [x] Document access ownership is explicit.
+- [x] Audit and operational logging responsibilities are separated.
 
 ## Review Result
 
@@ -47,7 +47,7 @@
 
 **Reviewer(s):**
 
-- Tech Lead / Architect:
+- Tech Lead / Architect
 - Backend Engineer:
 - DBA:
 - Security:
