@@ -118,3 +118,66 @@ approved REST/Kafka/projection/snapshot alternatives.
 Review comments are resolved or tracked as explicit follow-up work.
 ```
 
+# PLAT-001-T03 Deliverable Package
+
+This package contains the complete deliverables for:
+
+**PLAT-001-T03 — Document REST and Kafka communication matrix**
+
+## Files
+
+```text
+docs/architecture/
+├── rest-communication-matrix.md
+├── kafka-communication-matrix.md
+├── rest-vs-kafka-decision-guide.md
+└── plat-001-t03-review-checklist.md
+```
+
+## What This Task Establishes
+
+PLAT-001-T01 defined domain/service ownership.
+
+PLAT-001-T02 defined database ownership and prohibited direct cross-schema access.
+
+PLAT-001-T03 now defines how those isolated services communicate:
+
+- REST for immediate authoritative request/response;
+- Kafka for asynchronous business-event propagation.
+
+## Recommended Jira Acceptance Criteria
+
+1. Major synchronous service-to-service REST dependencies are documented.
+2. Every REST dependency has a clear business purpose and authoritative target owner.
+3. Deep/cyclic synchronous dependencies are explicitly discouraged.
+4. Major mortgage lifecycle Kafka events are documented.
+5. Each event has one owning producer and identified consumers.
+6. Transactional outbox is defined as the producer baseline.
+7. Consumer idempotency is required.
+8. At-least-once delivery semantics are explicit.
+9. Event versioning and correlation/causation metadata are defined.
+10. PII minimization applies to REST and Kafka contracts.
+11. A REST-vs-Kafka decision guide is documented.
+12. Communication design is reviewed for consistency with PLAT-001-T01 and PLAT-001-T02.
+
+## Suggested Jira Completion Comment
+
+Use only after review:
+
+```text
+Completed PLAT-001-T03.
+
+Deliverables:
+- rest-communication-matrix.md
+- kafka-communication-matrix.md
+- rest-vs-kafka-decision-guide.md
+- plat-001-t03-review-checklist.md
+
+The platform now has an initial service communication model covering synchronous
+REST dependencies, asynchronous Kafka business events, producer/consumer ownership,
+transactional outbox, idempotent consumers, and REST-vs-Kafka selection rules.
+
+Review comments are resolved or tracked as follow-up work.
+```
+
+
