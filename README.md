@@ -61,3 +61,60 @@ captured as follow-up Jira work.
 - PLAT-001-T03 — Document REST and Kafka communication matrix
 - PLAT-001-T04 — Create high-level deployment architecture
 - PLAT-001-T05 — Review architecture against independent deployability principle
+
+# PLAT-001-T02 Deliverable Package
+
+This package contains the architecture deliverables for:
+
+**PLAT-001-T02 — Define database ownership and no-cross-schema-access rules**
+
+## Files
+
+```text
+docs/architecture/
+├── database-ownership.md
+├── database-access-rules.md
+└── plat-001-t02-review-checklist.md
+```
+
+## Jira Acceptance Criteria
+
+1. Every persistent microservice has an assigned Oracle schema.
+2. Service-to-schema ownership is documented.
+3. Direct cross-schema reads and writes are prohibited.
+4. Cross-service foreign keys are prohibited.
+5. Database links/synonyms cannot bypass service boundaries.
+6. Cross-service data access uses REST, Kafka, approved projections, or immutable snapshots.
+7. Each service owns its Flyway migrations.
+8. A migration changes only its owning schema.
+9. External identifiers may be stored without DB-level FK coupling.
+10. Distributed ACID transactions across services are prohibited.
+11. Concrete allowed/forbidden mortgage examples are documented.
+12. Architecture review is completed before Done.
+
+## Suggested Repository Location
+
+```text
+mortgage-platform-architecture/
+└── docs/architecture/
+```
+
+## Suggested Jira Completion Comment
+
+Use only after review is actually complete:
+
+```text
+Completed PLAT-001-T02.
+
+Deliverables:
+- database-ownership.md
+- database-access-rules.md
+- plat-001-t02-review-checklist.md
+
+The architecture defines service-owned Oracle schemas, no-cross-schema-access
+rules, service-owned Flyway migrations, prohibited cross-service FKs, and
+approved REST/Kafka/projection/snapshot alternatives.
+
+Review comments are resolved or tracked as explicit follow-up work.
+```
+
